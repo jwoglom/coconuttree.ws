@@ -1,42 +1,117 @@
-<title>🥥🌴</title>
-<style>
-#landscape {
-    visibility: visible;
-    z-index: 2;
-}
-#portrait {
-    visibility: hidden;
-    z-index: 0;
-}
-@media (orientation: portrait) {
-  #landscape {
-    visibility: hidden;
-    z-index: 0;
-  }
-  
-  #portrait {
-    visibility: visible;
-    z-index: 2;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥥🌴</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
 
-/* Media query for landscape orientation */
-@media (orientation: landscape) {
-  #landscape {
-    visibility: visible;
-    z-index: 2;
-  }
-  
-  #portrait {
-    visibility: hidden;
-    z-index: 0;
-  }
-}
-</style>
-<body onclick="document.querySelector('#landscape').muted=false;document.querySelector('div').style.display='none'" background=black>
-<video id="landscape" autoplay muted onclick="this.muted=false;document.querySelector('div').style.display='none'" loop src="kamala-1815102526561419439.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
-<video id="portrait" autoplay muted onclick="document.querySelector('#landscape').muted=false;document.querySelector('div').style.display='none'" loop src="kamala-portrait-1808522158345273344.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
-<div style="position: absolute; top: 0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.25); color: black;vertical-align: middle;line-height: 100vh; font-size: 8em; z-index: 100; text-align: center">
-🖱️ 🟰 <span style="white-space: nowrap">🔇 ➡️ 🔊</span>
-</div>
+        .loader {
+            position: absolute; top: 0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.25); color: black;vertical-align: middle;line-height: 100vh; font-size: 8em; z-index: 100; text-align: center
+        }
+
+        .emoji-container {
+            display: none;
+            position: absolute; 
+            top: 0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            color: black;
+            vertical-align: middle;
+            line-height: 100vh;
+            font-size: 24em; 
+            z-index: 100; 
+            text-align: center
+        }
+
+        .emoji {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeEmojis 4s infinite;
+        }
+
+        .emoji:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeEmojis {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #landscape {
+            visibility: visible;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            pointer-events: none;
+        }
+
+        #portrait {
+            visibility: hidden;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            pointer-events: none;
+        }
+
+        @media (orientation: portrait) {
+            #landscape {
+                visibility: hidden;
+                z-index: 0;
+            }
+            #portrait {
+                visibility: visible;
+                z-index: 2;
+            }
+        }
+
+        @media (orientation: landscape) {
+            #landscape {
+                visibility: visible;
+                z-index: 2;
+            }
+            #portrait {
+                visibility: hidden;
+                z-index: 0;
+            }
+        }
+    </style>
+</head>
+<body onclick="document.querySelector('#landscape').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" background=black>
+    <video id="landscape" autoplay muted onclick="this.muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-1815102526561419439.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
+    <video id="portrait" autoplay muted onclick="document.querySelector('#landscape').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-portrait-1808522158345273344.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
+    <div class="loader">
+    🖱️ 🟰 <span style="white-space: nowrap">🔇 ➡️ 🔊</span>
+    </div>
+
+    <div class="emoji-container">
+        <div class="emoji">&#129373;</div>
+        <div class="emoji">&#127796;</div>
+    </div>
 </body>
+</html>
