@@ -39,19 +39,28 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: fadeEmojis 4s infinite;
+            animation: fadeEmojis 2.4s infinite;
         }
 
         .emoji:nth-child(2) {
-            animation-delay: 2s;
+            animation-delay: 1.2s;
         }
 
         @keyframes fadeEmojis {
-            0%, 100% {
+            0% {
+                opacity: 1;
+            }
+            25% {
                 opacity: 1;
             }
             50% {
                 opacity: 0;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
             }
         }
 
@@ -88,6 +97,17 @@
                 visibility: visible;
                 z-index: 2;
             }
+            .loader {
+                font-size: 6em;
+            }
+
+            .emoji {
+                top: 25%;
+            }
+
+            .emoji:nth-child(2) {
+                top: 75%;
+            }
         }
 
         @media (orientation: landscape) {
@@ -99,6 +119,17 @@
                 visibility: hidden;
                 z-index: 0;
             }
+            .loader {
+                letter-spacing: 0.2em;
+            }
+
+            .emoji {
+                left: 25%;
+            }
+
+            .emoji:nth-child(2) {
+                left: 75%;
+            }
         }
     </style>
 </head>
@@ -106,7 +137,7 @@
     <video id="landscape" autoplay muted onclick="this.muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-1815102526561419439.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
     <video id="portrait" autoplay muted onclick="document.querySelector('#landscape').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-portrait-1808522158345273344.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
     <div class="loader">
-    🖱️ 🟰 <span style="white-space: nowrap">🔇 ➡️ 🔊</span>
+    🖱️🟰🔇➡️🔊
     </div>
 
     <div class="emoji-container">
