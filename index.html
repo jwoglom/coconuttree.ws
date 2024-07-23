@@ -39,11 +39,11 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: fadeEmojis 2.4s infinite;
+            animation: fadeEmojis 1s infinite;
         }
 
         .emoji:nth-child(2) {
-            animation-delay: 1.2s;
+            animation-delay: .5s;
         }
 
         @keyframes fadeEmojis {
@@ -133,9 +133,9 @@
         }
     </style>
 </head>
-<body onclick="document.querySelector('#landscape').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.visibility='visible'" background=black>
-    <video id="landscape" autoplay muted onclick="this.muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.visibility='visible'" loop src="kamala-1815102526561419439.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
-    <video id="portrait" autoplay muted onclick="document.querySelector('#landscape').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-portrait-1808522158345273344.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
+<body onclick="document.querySelector('#portrait').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.visibility='visible'" background=black>
+    <video id="landscape" autoplay muted onclick="document.querySelector('#portrait').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.visibility='visible'" loop src="kamala-1815102526561419439.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
+    <video id="portrait" autoplay muted onclick="document.querySelector('#portrait').muted=false;document.querySelector('.loader').style.display='none';document.querySelector('.emoji-container').style.display='block'" loop src="kamala-portrait-1808522158345273344.mp4" style="width: 100%; height: 100%; background: black; position: absolute; top:0; left: 0; pointer-events: none" scrolling="false" controls="false"></video>
     <div class="loader">
     🖱️🟰🔇➡️🔊
     </div>
